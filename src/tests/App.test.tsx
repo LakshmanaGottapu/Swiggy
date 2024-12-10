@@ -1,5 +1,5 @@
 import {screen, render} from "@testing-library/react";
-import App from "./App";
+import App from "../App";
 import { describe, expect } from "vitest";
 
 describe("App tests", () => {
@@ -11,4 +11,5 @@ describe("App tests", () => {
             })
         ).toHaveTextContent("Vite + React");
     })
+    
 })
