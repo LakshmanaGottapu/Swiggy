@@ -1,0 +1,484 @@
+{
+    "userinfo": {
+        "user": "lakshman",
+        "email": "lakshman.automation@gmail.com",
+        "image": "https://w0.peakpx.com/wallpaper/206/587/HD-wallpaper-virat-kohli-71st-century-kholi-kissing-lockit-kholi-lockit-virat-kholi-cricketer-india.jpg",
+        "role": "admin"
+    },
+    "categories": {
+        "categoryTypes": {
+            "bf": "breakfast",
+            "ln": "lunch",
+            "sn": "snack",
+            "dn": "dinner",
+            "sm": "smoothy",
+            "ic": "icecream",
+            "sw": "sweet"
+        },
+        "allCategoryIds": [
+            "bf",
+            "ln",
+            "sn",
+            "dn",
+            "sm",
+            "ic",
+            "sw"
+        ]
+    },
+    "restaurants": {
+        "restros": {
+            "sk": {
+                "title": "Sravani Kitchen",
+                "location": {
+                    "longitude": 120,
+                    "latitude": 120
+                }
+            },
+            "gf": {
+                "title": "Gnaneswari foods",
+                "location": {
+                    "longitude": 120,
+                    "latitude": 120
+                }
+            },
+            "bm": {
+                "title": "Bindu Mandi",
+                "location": {
+                    "longitude": 120,
+                    "latitude": 120
+                }
+            },
+            "ls": {
+                "title": "Lakshman Sweets & Smoothies",
+                "location": {
+                    "longitude": 120,
+                    "latitude": 120
+                }
+            },
+            "cc": {
+                "title": "Chaithu Chamkis",
+                "location": {
+                    "longitude": 120,
+                    "latitude": 120
+                }
+            }
+        },
+        "allRestroIds": [
+            "sk",
+            "gf",
+            "bm",
+            "ls",
+            "cc"
+        ]
+    },
+    "products_01": [
+        {
+            "id": "it001",
+            "title": "Masala Dosa",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "bf",
+            "img": "https://i.pinimg.com/736x/e8/dc/7f/e8dc7f0b59b8602ba30621dee3c6291c.jpg"
+        },
+        {
+            "id": "it002",
+            "title": "Plane Dosa",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "bf",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dosai_Chutney_Hotel_Saravana_Bhavan.jpg/1200px-Dosai_Chutney_Hotel_Saravana_Bhavan.jpg"
+        },
+        {
+            "id": "it003",
+            "title": "Idli",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "bf",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dosai_Chutney_Hotel_Saravana_Bhavan.jpg/1200px-Dosai_Chutney_Hotel_Saravana_Bhavan.jpg"
+        },
+        {
+            "id": "it004",
+            "title": "Poori",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "bf",
+            "img": "https://www.awesomecuisine.com/wp-content/uploads/2020/03/poori-masala-kizhangu.jpg"
+        },
+        {
+            "id": "it005",
+            "title": "Masala Dosa",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "bf",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dosai_Chutney_Hotel_Saravana_Bhavan.jpg/1200px-Dosai_Chutney_Hotel_Saravana_Bhavan.jpg"
+        },
+        {
+            "id": "it006",
+            "title": "Pesara Dosa",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "bf",
+            "img": "https://res.cloudinary.com/roundglass/image/upload/v1697469276/rg/collective/media/rg-food-in-upma-pesarattu-rakesh-raghunathan-may2022-001-16x9-1697469275094.jpg"
+        },
+        {
+            "id": "it007",
+            "title": "Parota",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "bf",
+            "img": "https://c.ndtvimg.com/2021-05/tj7sdqj8_parotta_625x300_14_May_21.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=675"
+        },
+        {
+            "id": "it008",
+            "title": "Upma Dosa",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "bf",
+            "img": "https://anits-sds.in/wp-content/uploads/2024/03/upma-dosa.jpg"
+        },
+        {
+            "id": "it009",
+            "title": "Gaare",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "bf",
+            "img": "https://content3.jdmagicbox.com/v2/comp/hyderabad/l4/040pxx40.xx40.191019210007.m3l4/catalogue/kodi-kura-chitti-gaare-hyderabad-andhra-restaurants-xke3vjjgu8.jpg"
+        },
+        {
+            "id": "it010",
+            "title": "Uthappam",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "bf",
+            "img": "https://i.ytimg.com/vi/MW3JZwjn8gY/maxresdefault.jpg"
+        }
+    ],
+    "products_02": [
+        {
+            "id": "it011",
+            "title": "Veg Biryani",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "ln",
+            "img": "https://www.terrafood.co.in/cdn/shop/files/VegBiryani.jpg?v=1687766592"
+        },
+        {
+            "id": "it012",
+            "title": "Veg Fried Rice",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "ln",
+            "img": "https://www.terrafood.co.in/cdn/shop/files/VegBiryani.jpg?v=1687766592"
+        },
+        {
+            "id": "it013",
+            "title": "Chicken Dum Biryani",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "ln",
+            "img": "https://static.toiimg.com/thumb/54308405.cms?imgsize=510571&width=800&height=800"
+        },
+        {
+            "id": "it014",
+            "title": "Mutton Dum Biryani",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "ln",
+            "img": "https://xantilicious.com/wp-content/uploads/2017/06/for-site-2.jpg"
+        },
+        {
+            "id": "it015",
+            "title": "Fish Fry",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "ln",
+            "img": "https://i.ytimg.com/vi/o8lDCY2_jyw/maxresdefault.jpg"
+        },
+        {
+            "id": "it016",
+            "title": "Chicken Dum Biryani",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "ln",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBl1AyHalNOxox6WmDG0fR-nyL9dt6II1qtw&s"
+        },
+        {
+            "id": "it017",
+            "title": "Mutton Dum Biryani",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "ln",
+            "img": "https://www.cubesnjuliennes.com/wp-content/uploads/2021/03/Best-Mutton-Biryani-Recipe-500x500.jpg"
+        },
+        {
+            "id": "it018",
+            "title": "Chicken Fry piece biryani",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "ln",
+            "img": "https://www.indianrecipeinfo.com/wp-content/uploads/2023/03/andhra-chicken-fry-piece-biryani.jpg"
+        },
+        {
+            "id": "it019",
+            "title": "Veg meals",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "ln",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3t5aklbd6kF0Q8B3-y2QnrrgW2eh7yfqDkQ&s"
+        },
+        {
+            "id": "it020",
+            "title": "Veg Fried rice",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ln",
+            "img": "https://www.cookwithnabeela.com/wp-content/uploads/2024/02/VegetableFriedRice.webp"
+        }
+    ],
+    "products_03": [
+        {
+            "id": "it021",
+            "title": "Chicken Curry",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ln",
+            "img": "https://spiceeats.com/wp-content/uploads/2020/02/Mild-Chicken-Curry.jpg"
+        },
+        {
+            "id": "it022",
+            "title": "Fish curry",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ln",
+            "img": "https://stewwithsaba.com/wp-content/uploads/2024/05/IMG_4409-edited-500x500.jpg?crop=1"
+        },
+        {
+            "id": "it023",
+            "title": "Egg burji",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ln",
+            "img": "https://www.spicebangla.com/wp-content/uploads/2024/08/Egg-Masala-Curry.webp"
+        },
+        {
+            "id": "it024",
+            "title": "Egg Masala Curry",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ln",
+            "img": "https://www.spicebangla.com/wp-content/uploads/2024/08/Egg-Masala-Curry.webp"
+        },
+        {
+            "id": "it025",
+            "title": "Chicken Juicy Mandi",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJs6QuFud2opT4oDlYujWyfarFTLookjBf_Q&s"
+        },
+        {
+            "id": "it026",
+            "title": "Mutton Juicy Mandi",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJs6QuFud2opT4oDlYujWyfarFTLookjBf_Q&s"
+        },
+        {
+            "id": "it027",
+            "title": "Mutton Paya Soup",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        },
+        {
+            "id": "it028",
+            "title": "Chicken Soup",
+            "price": 50,
+            "restro": "bm",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJs6QuFud2opT4oDlYujWyfarFTLookjBf_Q&s"
+        },
+        {
+            "id": "it029",
+            "title": "Corn Soup",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        },
+        {
+            "id": "it030",
+            "title": "Panneer Butter Masala",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        }
+    ],
+    "products_04": [
+        {
+            "id": "it031",
+            "title": "Butter Naan",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        },
+        {
+            "id": "it032",
+            "title": "Butter Naan",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        },
+        {
+            "id": "it033",
+            "title": "Butter Naan",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "dn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEG-h_CjKNxgcaoeYmkxF3OD9uZfBD7j-MVw&s"
+        },
+        {
+            "id": "it034",
+            "title": "Milk Maisoorpak",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sw",
+            "img": "https://recipes.timesofindia.com/thumb/53376135.cms?width=1200&height=900"
+        },
+        {
+            "id": "it035",
+            "title": "Kalakand",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sw",
+            "img": "https://i0.wp.com/aartimadan.com/wp-content/uploads/2018/11/Kalakand-Recipe.jpg?fit=750%2C500&ssl=1"
+        },
+        {
+            "id": "it036",
+            "title": "Kaaju Barfi",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sw",
+            "img": "https://static.toiimg.com/thumb/83534097.cms?width=1200&height=900"
+        },
+        {
+            "id": "it037",
+            "title": "Gulab Jamun",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sw",
+            "img": "https://static.toiimg.com/thumb/83534097.cms?width=1200&height=900"
+        },
+        {
+            "id": "it038",
+            "title": "Lassi",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sm",
+            "img": "https://static.toiimg.com/thumb/83534097.cms?width=1200&height=900"
+        },
+        {
+            "id": "it039",
+            "title": "Butterscotch thickshake",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sm",
+            "img": "https://saltandbaker.com/wp-content/uploads/2022/04/square-butterscotch-milkshake-with-sauce1.jpg"
+        },
+        {
+            "id": "it040",
+            "title": "Oreo thickshake",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "sm",
+            "img": "https://saltandbaker.com/wp-content/uploads/2022/04/square-butterscotch-milkshake-with-sauce1.jpg"
+        }
+    ],
+    "products_05": [
+        {
+            "id": "it041",
+            "title": "Nuts Overload",
+            "price": 50,
+            "restro": "sk",
+            "categoryType": "ic",
+            "img": "https://b.zmtcdn.com/data/dish_photos/0e6/43804c73096c2e92c6ae3738c1ea50e6.jpg"
+        },
+        {
+            "id": "it042",
+            "title": "Strawberry",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "ic",
+            "img": "https://aplantifulpath.com/wp-content/uploads/2019/08/Strawberry-Ice-Cream-1.jpg"
+        },
+        {
+            "id": "it043",
+            "title": "Butterscotch",
+            "price": 50,
+            "restro": "ls",
+            "categoryType": "ic",
+            "img": "Butterscotch"
+        },
+        {
+            "id": "it044",
+            "title": "Vanilla",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "ic",
+            "img": "Vanilla"
+        },
+        {
+            "id": "it045",
+            "title": "Punugulu",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "sn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyIzMQw065RyRUUdWfsfkzCBFBoOh987XNEw&s"
+        },
+        {
+            "id": "it046",
+            "title": "Pakodi",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "sn",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyIzMQw065RyRUUdWfsfkzCBFBoOh987XNEw&s"
+        },
+        {
+            "id": "it047",
+            "title": "Jilebi",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "sn",
+            "img": "https://images.saymedia-content.com/.image/t_share/MTc2MjYxMDE3MTAwMTAwNzgx/jalebi-recipe.jpg"
+        },
+        {
+            "id": "it048",
+            "title": "Sambar Punugu",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "bf",
+            "img": "Punugulu"
+        },
+        {
+            "id": "it049",
+            "title": "Samosa",
+            "price": 50,
+            "restro": "cc",
+            "categoryType": "bf",
+            "img": "https://www.cookwithnabeela.com/wp-content/uploads/2024/02/AlooSamosa3.webp"
+        },
+        {
+            "id": "it050",
+            "title": "Buttermilk",
+            "price": 50,
+            "restro": "gf",
+            "categoryType": "sm",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyuFT7Dcb25yb3LzmQciDspNlbkZEN4I0Mg&s"
+        }
+    ]
+}
