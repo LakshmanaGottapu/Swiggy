@@ -3,14 +3,14 @@ import { Product } from "../utils/Interfaces";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 function ProductCard({ product }: { product: Product }) {
-  const { id, title, price, restro, img } = product;
+  const { title, price, restro, img } = product;
   const { setCartItems } = useContext(CartContext);
   function addToCart(){
     setCartItems(cartItems => [...cartItems, product]);
     // console.log("Added to cart", product);
   }
   return (
-    <Col key={id}>
+    <Col>
       <Card className="text-center" border="primary" style={{ width: '21rem', height:'35rem', margin:'0.5rem' }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
