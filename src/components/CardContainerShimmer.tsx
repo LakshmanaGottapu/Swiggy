@@ -2,8 +2,7 @@ import ProductCardShimmer from './ProductCardShimmer'
 function CardContainerShimmer() {
     return (
         <>
-            {Array(10).fill(null).map((_, i) => <ProductCardShimmer key={i} />)
-        }
+            {Array(4).fill(null).map((_, i) => <ProductCardShimmer key={i} />)}
         </>
     )
 }

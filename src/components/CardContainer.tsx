@@ -11,7 +11,7 @@ const CardContainer = () => {
     const products = useFetchProducts(page, isAllProducts, setIsAllProducts);
     function fetchMore(){
         if(!isAllProducts)
-            setPage(page + 1);
+            setPage(prev => prev + 1);
     }
     useIntersectionObserver(observerRef, fetchMore, products);
     
@@ -20,14 +20,9 @@ const CardContainer = () => {
     return (
         <>
             <Row xs={1} sm={2} lg={4} xl={5} xxl={8} >
-                {products.length > 0 ? (<>
-                {products.map(product => <ProductCard key={product.id} product={product} />)}
-                <Col ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Col>
-                </>) :
-                (<>
-                <Col ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Col>
-                <CardContainerShimmer/></>)} 
+                {products.length > 0 ? products.map(product => <ProductCard key={product.id} product={product} />) : <CardContainerShimmer/> }
             </Row>
+            <Row ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Row>
         </>
     )
 }
