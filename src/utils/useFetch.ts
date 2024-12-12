@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState, useMemo, Dispatch, SetStateAction } from "react";
+import { RefObject, useEffect, useState, useMemo, Dispatch, SetStateAction, useCallback } from "react";
 import { Product } from "./Interfaces";
 export async function fetchData(url: string, headers = {}) {
     const response = await fetch(url, {
@@ -12,12 +12,12 @@ export function useFetchProducts(page:number, isAllProducts:boolean,setIsAllProd
     const [products, setProducts] = useState<Product[]>([]);
     useEffect(() => {
         if(!isAllProducts)
-        fetchData("http://localhost:3000/products_0"+page)
-        .then(data => setProducts(prev => [...prev, ...data]))
-        .catch(err => {
-            console.error(err);
-            setIsAllProducts(true);
-        });
+            fetchData("http://localhost:3000/products_0"+page)
+            .then(data => setProducts(prev => [...prev, ...data]))
+            .catch(err => {
+                console.error(err);
+                setIsAllProducts(true);
+            });
     }, [page])
     return products;
 }
@@ -34,13 +34,14 @@ export function useFetchUserInfo() {
     return userInfo;
 }
 
-export function useIntersectionObserver(elementRef:RefObject<Element>, cb:()=>void, dependency){
-    const ib = useMemo(() => new IntersectionObserver((entries) => {
+export function useIntersectionObserver(elementRef:RefObject<Element>, cb:()=>void, products:Product[]){
+    const observerAction = useCallback(function (entries:IntersectionObserverEntry[]){
         entries.forEach(entry => {
-            if (entry.isIntersecting) cb();
-        })
-    }, {threshold:0.5}), [])
-    useEffect( () => {
+            if(entry.isIntersecting) cb();
+        })    
+    },[products])
+    const ib = useMemo(() => new IntersectionObserver(observerAction, {threshold:0.5}), [products])
+    useEffect(() => {
         const targetElement = elementRef.current
         if(targetElement)
             ib.observe(targetElement);
@@ -48,7 +49,6 @@ export function useIntersectionObserver(elementRef:RefObject<Element>, cb:()=>vo
             if(targetElement)
                 ib.unobserve(targetElement);
         }
-    },[dependency])
-
+    },[products])
 }
 
