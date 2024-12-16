@@ -24,11 +24,11 @@ const router = createBrowserRouter([
       }
     ]
   },
-  
+
   // Add more routes as needed
 ]);
 createRoot(document.getElementById('root')!).render(
-<CartProvider>
-  <RouterProvider router={router}/>
-</CartProvider>
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>
 );

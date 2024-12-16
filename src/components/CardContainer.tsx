@@ -1,6 +1,6 @@
 import { useFetchProducts, useIntersectionObserver } from "../utils/useFetch"
 import ProductCard from "./ProductCard"
-import {Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 import { useState, useRef } from "react";
 import CardContainerShimmer from "./CardContainerShimmer";
 // const Observer = memo(()=><Row style={{height:'5px', backgroundColor:'black'}}></Row>)
@@ -13,7 +13,7 @@ const CardContainer = () => {
         if(!isAllProducts)
             setPage(prev => prev + 1);
     }
-    useIntersectionObserver(observerRef, fetchMore, products);
+    useIntersectionObserver(observerRef, fetchMore);
     
     // if no products, return loading message
     if (!products) return <p>Loading...</p>;
