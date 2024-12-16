@@ -2,12 +2,14 @@ import { Card, Button, Col } from "react-bootstrap";
 import { Product } from "../utils/Interfaces";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { actionType } from "../context/CartContext";
 function ProductCard({ product }: { product: Product }) {
-  const { title, price, restro, img } = product;
-  const { setCartItems } = useContext(CartContext);
+  const { id, title, price, restro, img } = product;
+  const { dispatchCartAction } = useContext(CartContext);
   function addToCart(){
-    setCartItems(cartItems => [...cartItems, product]);
-    // console.log("Added to cart", product);
+    // setCartItems(cartItems => [...cartItems, product]);
+    dispatchCartAction({id, type:actionType.add})
+    // console.log("Added to cart", product);product.id
   }
   return (
     <Col >

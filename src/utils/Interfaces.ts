@@ -6,3 +6,4 @@ export interface Product {
     categoryType: string,
     img: string
 }
+
