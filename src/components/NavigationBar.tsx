@@ -13,6 +13,11 @@ const NavigationBar = () => {
             <Col sm={{ span: 4, offset: 6 }}>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
+                    <Nav.Link>
+                            <Link to="cart">
+                                <FontAwesomeIcon icon={faShoppingCart} />
+                            </Link>
+                        </Nav.Link>
                         <Nav.Link><Link to="/">Home</Link></Nav.Link>
                         <Nav.Link><Link to="/about">About</Link></Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -26,11 +31,7 @@ const NavigationBar = () => {
                                 Separated link
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link>
-                            <Link to="cart">
-                                <FontAwesomeIcon icon={faShoppingCart} />
-                            </Link>
-                        </Nav.Link>
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Col>

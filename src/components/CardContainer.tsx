@@ -1,6 +1,6 @@
 import { useFetchProducts, useIntersectionObserver } from "../utils/useFetch"
 import ProductCard from "./ProductCard"
-import {Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 import { useState, useRef } from "react";
 import CardContainerShimmer from "./CardContainerShimmer";
 // const Observer = memo(()=><Row style={{height:'5px', backgroundColor:'black'}}></Row>)
@@ -11,23 +11,18 @@ const CardContainer = () => {
     const products = useFetchProducts(page, isAllProducts, setIsAllProducts);
     function fetchMore(){
         if(!isAllProducts)
-            setPage(page + 1);
+            setPage(prev => prev + 1);
     }
-    useIntersectionObserver(observerRef, fetchMore, products);
+    useIntersectionObserver(observerRef, fetchMore);
     
     // if no products, return loading message
     if (!products) return <p>Loading...</p>;
     return (
         <>
             <Row xs={1} sm={2} lg={4} xl={5} xxl={8} >
-                {products.length > 0 ? (<>
-                {products.map(product => <ProductCard key={product.id} product={product} />)}
-                <Col ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Col>
-                </>) :
-                (<>
-                <Col ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Col>
-                <CardContainerShimmer/></>)} 
+                {products.length > 0 ? products.map(product => <ProductCard key={product.id} product={product} />) : <CardContainerShimmer/> }
             </Row>
+            <Row ref={observerRef} style={{height:'5px', backgroundColor:'black', width:'100%'}}></Row>
         </>
     )
 }

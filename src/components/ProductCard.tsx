@@ -10,14 +10,13 @@ function ProductCard({ product }: { product: Product }) {
     // console.log("Added to cart", product);
   }
   return (
-    <Col>
-      <Card className="text-center" border="primary" style={{ width: '21rem', height:'35rem', margin:'0.5rem' }}>
-        <Card.Img variant="top" src={img} />
+    <Col >
+      <Card className="text-center" border="primary" style={{padding:'0.5rem',margin:'0.5rem' }}>
+        <Card.Img variant="top" src={img} style={{height: '8.5rem', width:'15.5rem', transform: 'translate(-2%,-5%)'}} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            yummy food item
           </Card.Text>
           <Card.Text>price: {price}/-</Card.Text>
           <Card.Text>restaurant: {restro}</Card.Text>
