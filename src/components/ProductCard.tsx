@@ -3,14 +3,11 @@ import { Product } from "../utils/Interfaces";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { actionType } from "../context/CartContext";
+import {getQuantity} from "../context/CartContext";
 function ProductCard({ product }: { product: Product }) {
   const { id, title, price, restro, img } = product;
   const { dispatchCartAction } = useContext(CartContext);
-  function addToCart(){
-    // setCartItems(cartItems => [...cartItems, product]);
-    dispatchCartAction({product, type:actionType.add})
-    // console.log("Added to cart", product);product.id
-  }
+  const quantity = getQuantity(id);
   return (
     <Col >
       <Card className="text-center" border="primary" style={{padding:'0.5rem',margin:'0.5rem' }}>
@@ -22,7 +19,12 @@ function ProductCard({ product }: { product: Product }) {
           </Card.Text>
           <Card.Text>price: {price}/-</Card.Text>
           <Card.Text>restaurant: {restro}</Card.Text>
-          <Button variant="primary" onClick={addToCart}>Add To Cart</Button>
+          {quantity>0 ? <>
+          <Button variant="primary" onClick={()=>dispatchCartAction({product, type:actionType.increment})}>+</Button>
+          <Button variant="danger" onClick={()=>dispatchCartAction({product, type:actionType.decrement})}>-</Button>
+          </> :<Button variant="primary" onClick={()=>dispatchCartAction({product, type:actionType.add})}>Add to cart</Button>
+          }
+          {quantity>0 && <Card.Text>{quantity}</Card.Text>}
         </Card.Body>
       </Card>
     </Col>

@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useReducer, useContext } from "react";
 import { Product } from '../utils/Interfaces';
 export type CartType = {
     products: Record<string, { product: Product; quantity: number }>; // All product entries
     ids: string[]; // Separate `ids` key
-  };  
+} 
 
 const initialState:CartType = {
     ids:['product01'],
@@ -16,12 +16,12 @@ const initialState:CartType = {
                 categoryType: "string",
                 img: "string"
             },
-            quantity:0
+            quantity:1
         }
     }
 }
 export enum actionType {
-    add="add", delete="delete"
+    add="add", delete="delete", increment="increment", decrement="decrement"
 }
 export const CartContext = createContext({cartState:initialState, dispatchCartAction: ({}:{product:Product, type:actionType}) => {
     // throw new Error("dispatchCartAction is not implemented yet."); // Placeholder
@@ -39,16 +39,26 @@ function reducer(state:CartType, action:{product:Product,type:actionType}) {
             return {...state}
         }
         case actionType.delete:{
-            if(state.products[id].quantity == 1){
+            if(state.products[id] !== undefined){
                 delete state.products[id];
                 const index = state.ids.indexOf(id);
-                if(index>0) state.ids.splice(index,1)
+                if(index>0) state.ids.splice(index,1);
+                return {...state}
             }
-            else --state.products[id].quantity
+            break;
+        }
+        case actionType.increment:{
+            ++state.products[id].quantity
             return {...state}
         }
-        default : return state;
+        case actionType.decrement:{
+            --state.products[id].quantity
+            if(state.products[id].quantity == 0)
+                delete state.products[id];
+            return {...state}
+        }
     }
+    return state;
 }
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cartState, dispatchCartAction] = useReducer(reducer, initialState);
@@ -58,6 +68,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         </CartContext.Provider>
     )
 }
+export function getQuantity(id:string){
+    const {cartState} = useContext(CartContext);
+    return cartState.products[id] !== undefined ? cartState.products[id].quantity : 0;
+  }
 // export const CategoryProvider = ({ children }: { children: ReactNode }) => {
 //     const [categories, setCategories] = useState<String[]>([]);
 //     return (
