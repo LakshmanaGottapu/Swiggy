@@ -8,7 +8,7 @@ function ProductCard({ product }: { product: Product }) {
   const { dispatchCartAction } = useContext(CartContext);
   function addToCart(){
     // setCartItems(cartItems => [...cartItems, product]);
-    dispatchCartAction({id, type:actionType.add})
+    dispatchCartAction({product, type:actionType.add})
     // console.log("Added to cart", product);product.id
   }
   return (
