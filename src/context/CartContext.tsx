@@ -6,19 +6,8 @@ export type CartType = {
 } 
 
 const initialState:CartType = {
-    ids:['product01'],
-    products:{
-        'product01':{
-            product:{
-                id:"",  title: "string",
-                price: 0,
-                restro: "string",
-                categoryType: "string",
-                img: "string"
-            },
-            quantity:1
-        }
-    }
+    ids:[],
+    products:{}
 }
 export enum actionType {
     add="add", delete="delete", increment="increment", decrement="decrement"
@@ -42,7 +31,7 @@ function reducer(state:CartType, action:{product:Product,type:actionType}) {
             if(state.products[id] !== undefined){
                 delete state.products[id];
                 const index = state.ids.indexOf(id);
-                if(index>0) state.ids.splice(index,1);
+                if(index>=0) state.ids.splice(index,1);
                 return {...state}
             }
             break;
@@ -53,8 +42,11 @@ function reducer(state:CartType, action:{product:Product,type:actionType}) {
         }
         case actionType.decrement:{
             --state.products[id].quantity
-            if(state.products[id].quantity == 0)
-                delete state.products[id];
+            if(state.products[id].quantity == 0){
+                delete state.products[id]
+                const index = state.ids.indexOf(id);
+                if(index>=0) state.ids.splice(index,1);
+            }
             return {...state}
         }
     }
