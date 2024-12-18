@@ -15,6 +15,7 @@ const CartItem = ({ item }: { item: {product:Product, quantity:number} }) => {
                 <Card.Text>price: {price}/-</Card.Text>
                 <Card.Text>restaurant: {restro}</Card.Text>
                 <Card.Text>quantity: {quantity}</Card.Text>
+                <Card.Text>total cost: {quantity*price}</Card.Text>
                 <Button variant="danger" onClick={()=>dispatchCartAction({product:item.product, type:actionType.delete})}>Delete</Button>
             </Card.Body>
         </Card>
