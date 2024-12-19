@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useReducer, useContext, useState, Dispatch, SetStateAction } from "react";
+import { createContext, ReactNode, useReducer, useContext } from "react";
 import { Product } from '../utils/Interfaces';
 
 export type CartType = {
-    products: Record<string, { product: Product; quantity: number }>; // All product entries
-    ids: string[]; // Separate `ids` key
+    products: Record<string, { product: Product; quantity: number }>,
+    ids: string[];
 } 
 
 const initialState:CartType = {
@@ -14,9 +14,7 @@ export enum actionType {
     add="add", delete="delete", increment="increment", decrement="decrement"
 }
 
-export const CartContext = createContext({cartState:initialState, dispatchCartAction: ({}:{product:Product, type:actionType}) => {
-    // throw new Error("dispatchCartAction is not implemented yet."); // Placeholder
-  },});
+export const CartContext = createContext({cartState:initialState, dispatchCartAction: ({}:{product:Product, type:actionType}) => {},});
 function reducer(state:CartType, action:{product:Product,type:actionType}) {
     const {product, type} = action;
     const {id} = product;
@@ -67,11 +65,3 @@ export function getQuantity(id:string){
     const {cartState} = useContext(CartContext);
     return cartState.products[id] !== undefined ? cartState.products[id].quantity : 0;
   }
-// export const CategoryProvider = ({ children }: { children: ReactNode }) => {
-//     const [categories, setCategories] = useState<String[]>([]);
-//     return (
-//         <CategoryContext.Provider value={{ categories, setCategories }}>
-//             {children}
-//         </CategoryContext.Provider>
-//     )
-// }

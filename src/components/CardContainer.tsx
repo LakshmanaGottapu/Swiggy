@@ -1,4 +1,4 @@
-import { useFetchProducts, useIntersectionObserver } from "../utils/useFetch"
+import { useFetchProducts, useIntersectionObserver } from "../hooks/cardContainerHooks"
 import ProductCard from "./ProductCard"
 import {Row} from 'react-bootstrap';
 import { useRef } from "react";
@@ -9,8 +9,6 @@ const CardContainer = () => {
     const products = useFetchProducts();
     useIntersectionObserver(observerRef);
     
-    // if no products, return loading message
-    if (!products) return <p>Loading...</p>;
     return (
         <>
             <Row xs={1} sm={2} lg={4} xl={5} xxl={8} >
