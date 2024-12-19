@@ -1,5 +1,6 @@
-import { RefObject, useEffect, useState, useMemo, Dispatch, SetStateAction } from "react";
-import { Product } from "./Interfaces";
+import { RefObject, useEffect, useState, useMemo, useContext } from "react";
+import { CardContainerContext } from "../context/CartContext";
+
 export async function fetchData(url: string, headers = {}) {
     const response = await fetch(url, {
         headers,
@@ -27,8 +28,8 @@ export function randomColorRGBA(){
     const randomPercent = () => (randomNumber(50, 100) * 0.01).toFixed(2)
     return`rgba(${[randomByte(), randomByte(), randomByte(), randomPercent()].join(',')})`;
 }
-export function useFetchProducts(page: number, isAllProducts: boolean, setIsAllProducts: Dispatch<SetStateAction<boolean>>) {
-    const [products, setProducts] = useState<Product[]>([]);
+export function useFetchProducts() {
+    const {products, setProducts, isAllProducts, setIsAllProducts, page} = useContext(CardContainerContext);
     useEffect(() => {
         if (!isAllProducts)
             fetchData("http://localhost:3000/products_0" + page)
@@ -40,14 +41,16 @@ export function useFetchProducts(page: number, isAllProducts: boolean, setIsAllP
     }, [page])
     return products;
 }
-export function useIntersectionObserver(elementRef: RefObject<Element>, cb: () => void) {
+export function useIntersectionObserver(elementRef: RefObject<Element>) {
+    const {isAllProducts, setPage} = useContext(CardContainerContext);
     const ib = useMemo(() => new IntersectionObserver(function (entries: IntersectionObserverEntry[]) {
         console.log({ entries })
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 (entry.target as HTMLDivElement).style.backgroundColor = randomColorRGBA();
-                cb();
-            };
+                if(!isAllProducts)
+                    setPage(prevPage => prevPage+1)
+            }
         })
     }, { threshold: 0.5 }), [])
     useEffect(() => {

@@ -3,7 +3,7 @@ import App from './App.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CardContainer from './components/CardContainer';
-import { CartProvider } from './context/CartContext';
+import { CardContainerProvider, CartProvider } from './context/CartContext';
 import ProductCart from './components/ProductCart.tsx';
 const router = createBrowserRouter([
   {
@@ -28,7 +28,9 @@ const router = createBrowserRouter([
   // Add more routes as needed
 ]);
 createRoot(document.getElementById('root')!).render(
+  <CardContainerProvider>
   <CartProvider>
     <RouterProvider router={router} />
   </CartProvider>
+  </CardContainerProvider>
 );
