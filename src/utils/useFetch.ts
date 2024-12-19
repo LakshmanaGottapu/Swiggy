@@ -22,16 +22,17 @@ export function useFetchUserInfo() {
     }, [])
     return userInfo;
 }
-export function randomColorRGBA(){
-    const randomNumber = (min:number, max:number) => Math.floor(Math.random() * (max - min + 1) + min);
+export function randomColorRGBA() {
+    const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
     const randomByte = () => randomNumber(0, 255)
     const randomPercent = () => (randomNumber(50, 100) * 0.01).toFixed(2)
-    return`rgba(${[randomByte(), randomByte(), randomByte(), randomPercent()].join(',')})`;
+    return `rgba(${[randomByte(), randomByte(), randomByte(), randomPercent()].join(',')})`;
 }
 export function useFetchProducts() {
-    const {products, setProducts, isAllProducts, setIsAllProducts, page} = useContext(CardContainerContext);
+    const { products, setProducts, isAllProducts, setIsAllProducts, page } = useContext(CardContainerContext);
+    const productPerPage = 10
     useEffect(() => {
-        if (!isAllProducts)
+        if ( !isAllProducts && products.length/productPerPage < page )
             fetchData("http://localhost:3000/products_0" + page)
                 .then(data => setProducts(prev => [...prev, ...data]))
                 .catch(err => {
@@ -42,14 +43,14 @@ export function useFetchProducts() {
     return products;
 }
 export function useIntersectionObserver(elementRef: RefObject<Element>) {
-    const {isAllProducts, setPage} = useContext(CardContainerContext);
+    const { isAllProducts, setPage } = useContext(CardContainerContext);
     const ib = useMemo(() => new IntersectionObserver(function (entries: IntersectionObserverEntry[]) {
         console.log({ entries })
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 (entry.target as HTMLDivElement).style.backgroundColor = randomColorRGBA();
-                if(!isAllProducts)
-                    setPage(prevPage => prevPage+1)
+                if (!isAllProducts)
+                    setPage(prevPage => prevPage + 1)
             }
         })
     }, { threshold: 0.5 }), [])
