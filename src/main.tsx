@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CardContainer from './components/CardContainer';
 import { CartProvider } from './context/CartContext';
+import { CardContainerProvider } from './context/CardContainerContext';
 import ProductCart from './components/ProductCart.tsx';
 const router = createBrowserRouter([
   {
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
       }
     ]
   },
-
-  // Add more routes as needed
 ]);
 createRoot(document.getElementById('root')!).render(
-  <CartProvider>
-    <RouterProvider router={router} />
-  </CartProvider>
+  <CardContainerProvider>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  </CardContainerProvider>
 );
