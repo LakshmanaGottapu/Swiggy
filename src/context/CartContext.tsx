@@ -1,13 +1,6 @@
 import { createContext, ReactNode, useReducer, useContext, useState, Dispatch, SetStateAction } from "react";
 import { Product } from '../utils/Interfaces';
-export type CardContainerType = {
-    products: Array<Product>,
-    setProducts: Dispatch<SetStateAction<Product[]>>,
-    isAllProducts: boolean,
-    setIsAllProducts: Dispatch<SetStateAction<boolean>>,
-    page: number,
-    setPage: Dispatch<SetStateAction<number>>
-}
+
 export type CartType = {
     products: Record<string, { product: Product; quantity: number }>; // All product entries
     ids: string[]; // Separate `ids` key
@@ -20,7 +13,7 @@ const initialState:CartType = {
 export enum actionType {
     add="add", delete="delete", increment="increment", decrement="decrement"
 }
-export const CardContainerContext = createContext<CardContainerType>({products:[], setProducts:()=>undefined, isAllProducts:false, setIsAllProducts:()=>undefined, page:1, setPage:()=>undefined});
+
 export const CartContext = createContext({cartState:initialState, dispatchCartAction: ({}:{product:Product, type:actionType}) => {
     // throw new Error("dispatchCartAction is not implemented yet."); // Placeholder
   },});
@@ -61,16 +54,7 @@ function reducer(state:CartType, action:{product:Product,type:actionType}) {
     }
     return state;
 }
-export const CardContainerProvider = ({ children }: { children: ReactNode }) => {
-    const [isAllProducts, setIsAllProducts] = useState<boolean>(false);
-    const [products, setProducts] = useState<Product[]>([]);
-    const [page, setPage] = useState(1);
-    return (
-        <CardContainerContext.Provider value={{ products, setProducts, isAllProducts, setIsAllProducts, page, setPage }}>
-            {children}
-        </CardContainerContext.Provider>
-    )
-}
+
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cartState, dispatchCartAction] = useReducer(reducer, initialState);
     return (

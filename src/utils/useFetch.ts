@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState, useMemo, useContext } from "react";
-import { CardContainerContext } from "../context/CartContext";
+import { CardContainerContext } from "../context/CardContainerContext";
 
 export async function fetchData(url: string, headers = {}) {
     const response = await fetch(url, {
