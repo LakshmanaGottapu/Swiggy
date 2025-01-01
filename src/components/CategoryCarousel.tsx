@@ -8,7 +8,7 @@ function CategoryCarousel() {
   return (
     <>
         <h1>Categories</h1>
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel activeIndex={index} onSelect={handleSelect} fade>
         <Carousel.Item>
             <img className="d-block w-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dosai_Chutney_Hotel_Saravana_Bhavan.jpg/1200px-Dosai_Chutney_Hotel_Saravana_Bhavan.jpg" alt="Slide 1" />
             {/* <ExampleCarouselImage text="First slide" /> */}
