@@ -19,8 +19,10 @@ const NavigationBar = () => {
                             </Link>
                         </Nav.Link>
                         <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                        <Nav.Link><Link to="/comments">Comments</Link></Nav.Link>
+                        <Nav.Link><Link to="/nested_comments">Nested Comments</Link></Nav.Link>
                         <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Another action
@@ -30,7 +32,7 @@ const NavigationBar = () => {
                             <NavDropdown.Item href="#action/3.4">
                                 Separated link
                             </NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                         
                     </Nav>
                 </Navbar.Collapse>

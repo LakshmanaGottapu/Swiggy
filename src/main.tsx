@@ -9,6 +9,11 @@ import ProductCart from './components/ProductCart.tsx';
 import CategoryCarousel from './components/CategoryCarousel.tsx';
 import ProductPage from './components/ProductPage.tsx';
 import { ProductReviewContextProvider } from './context/ProductReviewContext.tsx';
+// import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+// import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./index.css";
+import Comments from './components/Comments.tsx';
+import NestedComments from './components/NestedComments.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <h1>About</h1>
+      },
+      {
+        path: '/comments',
+        element: <Comments/>
+      },
+      {
+        path: '/nested_comments',
+        element: <NestedComments/>
       }
     ]
   },
