@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext';
 import { CardContainerProvider } from './context/CardContainerContext';
 import ProductCart from './components/ProductCart.tsx';
 import CategoryCarousel from './components/CategoryCarousel.tsx';
+import ProductPage from './components/ProductPage.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
           <CategoryCarousel/>
           <CardContainer />
         </>,
+      },
+      {
+        path: '/product/:id',
+        element: <ProductPage/>
       },
       {
         path: '/cart',

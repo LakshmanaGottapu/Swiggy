@@ -4,12 +4,14 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { actionType } from "../context/CartContext";
 import {getQuantity} from "../context/CartContext";
+import { Link } from "react-router-dom";
 function ProductCard({ product }: { product: Product }) {
   const { id, title, price, restro, img } = product;
   const { dispatchCartAction } = useContext(CartContext);
   const quantity = getQuantity(id);
   return (
     <Col >
+    <Link to={"/product/"+id}>
       <Card className="text-center" border="primary" style={{padding:'0.5rem',margin:'0.5rem' }}>
         <Card.Img variant="top" src={img} style={{height: '8.5rem', width:'15.5rem', transform: 'translate(-2%,-5%)'}} />
         <Card.Body>
@@ -27,6 +29,7 @@ function ProductCard({ product }: { product: Product }) {
           {quantity>0 && <Card.Text>{quantity}</Card.Text>}
         </Card.Body>
       </Card>
+      </Link>
     </Col>
   );
 }
