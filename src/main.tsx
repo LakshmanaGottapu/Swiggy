@@ -8,6 +8,7 @@ import { CardContainerProvider } from './context/CardContainerContext';
 import ProductCart from './components/ProductCart.tsx';
 import CategoryCarousel from './components/CategoryCarousel.tsx';
 import ProductPage from './components/ProductPage.tsx';
+import { ProductReviewContextProvider } from './context/ProductReviewContext.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -16,13 +17,13 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <>
-          <CategoryCarousel/>
+          <CategoryCarousel />
           <CardContainer />
         </>,
       },
       {
         path: '/product/:id',
-        element: <ProductPage/>
+        element: <ProductPage />
       },
       {
         path: '/cart',
@@ -37,8 +38,10 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')!).render(
   <CardContainerProvider>
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <ProductReviewContextProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </ProductReviewContextProvider>
   </CardContainerProvider>
 );

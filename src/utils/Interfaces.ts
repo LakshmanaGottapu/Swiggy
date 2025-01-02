@@ -7,3 +7,9 @@ export interface Product {
     img: string
 }
 
+export interface ProductReview{
+    id: number
+    productId: string
+    content: string
+}
+

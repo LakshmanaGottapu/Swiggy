@@ -71,6 +71,14 @@
             "cc"
         ]
     },
+    "reviews": [
+        {
+            "id": 1, "productId": "it001", "content":"very delicious"
+        },
+        {
+            "id": 2, "productId": "it001", "content":"extremely tasty"
+        }
+    ],
     "products_01": [
         {
             "id": "it001",
