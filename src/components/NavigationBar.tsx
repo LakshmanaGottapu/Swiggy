@@ -1,4 +1,4 @@
-import { Col, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Col, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
